@@ -19,6 +19,11 @@
         Download and install Apache Maven from <a href="https://maven.apache.org/download.cgi">Maven's official website</a>.
         <br>Ensure that <code>MAVEN_HOME</code> is set in your environment variables.
     </li>
+    <li><strong>Postman to Test API Endpoints</strong><br>
+    Download and install Postman from <a href="https://www.postman.com/downloads/">Postman's official website</a>.<br>
+    Ensure that Postman is installed and set up on your system to test the API endpoints. You can use it to send requests such as GET, POST, PUT, DELETE, and PATCH to your Task Management System API.<br>
+    After installation, you can start Postman and enter the necessary request details, such as endpoint URL, HTTP method, headers (for authentication), and request body where applicable, to test the endpoints of the application.
+</li>
     <li><strong>IDE</strong>: You can use Spring Tool Suite (STS) or any Java IDE like IntelliJ IDEA or Eclipse for a smoother development experience.</li>
 </ul>
 
