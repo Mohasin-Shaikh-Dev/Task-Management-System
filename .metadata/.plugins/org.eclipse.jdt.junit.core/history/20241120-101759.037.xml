@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserTaskTest" project="TaskManagmentSystem" tests="3" started="3" failures="0" errors="1" ignored="0">
+  <testsuite name="com.example.www.customTest.UserTaskTest" time="2.63" displayname="UserTaskTest" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]">
+    <testcase name="testUpdateTask" classname="com.example.www.customTest.UserTaskTest" time="2.569" displayname="testUpdateTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testUpdateTask()]">
+      <error>com.example.www.exception.TaskNotFound: Task Not Found&#13;
+	at com.example.www.service.TaskService.lambda$4(TaskService.java:75)&#13;
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)&#13;
+	at com.example.www.service.TaskService.updateTask(TaskService.java:75)&#13;
+	at com.example.www.customTest.UserTaskTest.testUpdateTask(UserTaskTest.java:81)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="testGetAllTask" classname="com.example.www.customTest.UserTaskTest" time="0.031" displayname="testGetAllTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testGetAllTask()]"/>
+    <testcase name="testCreateTask" classname="com.example.www.customTest.UserTaskTest" time="0.021" displayname="testCreateTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testCreateTask()]"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,20 @@
+package com.example.www.mapper;
+
+import com.example.www.dto.TaskDto;
+import com.example.www.entity.Task;
+
+//TaskMapper Class to map between the entity and dto class
+public class TaskMapper {
+	public Task toEntity(TaskDto taskDto)
+	{
+		Task task=new Task();
+		task.setTitle(taskDto.getTitle());
+		task.setDescription(taskDto.getDescription());
+		task.setStatus(taskDto.getStatus());
+		task.setDueDate(taskDto.getDueDate());
+		task.setStatus(taskDto.getStatus());
+		task.setCreateAt(taskDto.getCreateAt());
+		task.setUpdateAt(taskDto.getUpdateAt());
+		return task;
+	}
+}

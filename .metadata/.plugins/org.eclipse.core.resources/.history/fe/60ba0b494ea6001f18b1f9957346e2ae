@@ -1,0 +1,68 @@
+package com.example.www.customTest;
+
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.example.www.dto.TaskDto;
+import com.example.www.entity.Task;
+import com.example.www.mapper.TaskMapper;
+import com.example.www.repository.TaskRepository;
+import com.example.www.service.TaskService;
+
+@ExtendWith(MockitoExtension.class)
+public class UserTaskTest {
+	@Mock
+	private TaskRepository taskRepository;
+
+	@Mock
+    private TaskMapper taskMapper;
+
+    private TaskService taskService;
+
+  
+
+    @Test
+    void testCreateTask() {
+        // Arrange
+        TaskDto taskDto = new TaskDto(); // Assume taskDto has valid data
+        Task task = new Task(); // Similarly, populate task with expected values
+        TaskDto expectedTaskDto = new TaskDto(); // The expected DTO after saving
+
+        // Mock the behavior of the mapper and repository
+        when(taskMapper.toEntity(taskDto)).thenReturn(task);
+        when(taskRepository.save(task)).thenReturn(task);
+        when(taskMapper.toDto(task)).thenReturn(expectedTaskDto);
+
+        // Act
+        TaskDto result = taskService.createTask(taskDto);
+
+        // Assert
+        assertNotNull(result); // Check if the result is not null
+        assertEquals(expectedTaskDto, result); // Ensure the result matches the expected DTO
+        verify(taskRepository, times(1)).save(task); // Verify save was called once
+        verify(taskMapper, times(1)).toEntity(taskDto); // Verify mapper was called
+        verify(taskMapper, times(1)).toDto(task); // Verify mapper was called for conversion
+    }
+}
+
+	@BeforeEach
+	void setUp() {
+		this.taskService = new TaskService(this.taskRepository);
+	}
+
+	@Test
+	void testGetAllTask() {
+		taskService.getAllTasks();
+		verify(taskRepository).findAll();
+	}
+	
+	void 
+
+}

@@ -1,0 +1,60 @@
+package com.example.www.customTest;
+
+import static org.hamcrest.CoreMatchers.any;
+import static org.mockito.Mockito.when;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import com.example.www.dto.TaskDto;
+import com.example.www.entity.Status;
+import com.example.www.entity.Task;
+import com.example.www.mapper.TaskMapper;
+import com.example.www.repository.TaskRepository;
+import com.example.www.service.TaskService;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+public class TaskServiceTest {
+
+	@InjectMocks
+	private TaskService taskService;
+
+	@Mock
+	private TaskMapper taskMapper;
+
+	@Mock
+	private TaskRepository taskRepository; // Mocked Task repository to simulate(fake) database interaction
+
+	 private Task task;
+    private TaskDto taskDto;
+    
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.openMocks(this); // Initialize mocks
+
+        task = new Task(1, "Task1", "Description1", LocalDate.now(), Status.IN_PROCESS, LocalDateTime.now(), LocalDateTime.now());
+        taskDto = new TaskDto(1, "Task1", "Description1", LocalDate.now(), Status.IN_PROCESS, LocalDateTime.now(), LocalDateTime.now());
+    }
+
+	
+	// test case for the getAllTask method
+	@Test
+	public void testgetAllTasks() {
+        when(taskMapper.toEntity((TaskDto) any(TaskDto.class))).thenReturn(task); // Mock conversion to Entity
+        when(taskRepository.save((Task)any(Task.class))).thenReturn(task); // Mock saving the task
+
+        TaskDto createdTaskDto = taskService.createTask(taskDto); // Call service method
+
+        assertNotNull(createdTaskDto);
+        assertEquals(taskDto.getTitle(), createdTaskDto.getTitle()); // Check if task is created correctly
+    }
+}

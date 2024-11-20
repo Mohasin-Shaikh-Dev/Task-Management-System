@@ -1,0 +1,21 @@
+package com.example.www.entity;
+
+import org.springframework.data.annotation.Id;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table
+@AllArgsConstructor
+@NoArgsConstructor
+public class Student {
+	
+	@Id
+	int stud_id;
+	
+	String name;
+
+}

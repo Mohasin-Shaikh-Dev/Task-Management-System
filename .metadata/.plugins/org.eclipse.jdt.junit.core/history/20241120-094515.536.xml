@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserTaskTest" project="TaskManagmentSystem" tests="3" started="3" failures="0" errors="1" ignored="0">
+  <testsuite name="com.example.www.customTest.UserTaskTest" time="2.553" displayname="UserTaskTest" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]">
+    <testcase name="testUpdateTask" classname="com.example.www.customTest.UserTaskTest" time="2.498" displayname="testUpdateTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testUpdateTask()]">
+      <error>org.mockito.exceptions.misusing.UnnecessaryStubbingException: 
+Unnecessary stubbings detected.
+Clean &amp; maintainable test code requires zero unnecessary code.
+Following stubbings are unnecessary (click to navigate to relevant line of code):
+  1. -&gt; at com.example.www.customTest.UserTaskTest.testUpdateTask(UserTaskTest.java:77)
+  2. -&gt; at com.example.www.customTest.UserTaskTest.testUpdateTask(UserTaskTest.java:78)
+  3. -&gt; at com.example.www.customTest.UserTaskTest.testUpdateTask(UserTaskTest.java:79)
+Please remove unnecessary stubbings or use 'lenient' strictness. More info: javadoc for UnnecessaryStubbingException class.&#13;
+	at org.mockito.junit.jupiter.MockitoExtension.afterEach(MockitoExtension.java:197)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="testGetAllTask" classname="com.example.www.customTest.UserTaskTest" time="0.027" displayname="testGetAllTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testGetAllTask()]"/>
+    <testcase name="testCreateTask" classname="com.example.www.customTest.UserTaskTest" time="0.02" displayname="testCreateTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testCreateTask()]"/>
+  </testsuite>
+</testrun>

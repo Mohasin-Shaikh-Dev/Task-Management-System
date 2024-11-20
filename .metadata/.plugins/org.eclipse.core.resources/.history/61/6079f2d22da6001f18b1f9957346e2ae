@@ -1,0 +1,16 @@
+package com.example.www;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Assertions;
+
+@SpringBootTest
+class TaskManagmentSystemApplicationTests {
+	
+	@Test
+    void testAdd() {
+        assertEquals(3, 2 + 1);
+    }
+
+}

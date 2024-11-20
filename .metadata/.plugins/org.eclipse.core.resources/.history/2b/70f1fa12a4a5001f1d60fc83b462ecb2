@@ -1,0 +1,18 @@
+package com.example.www.service;
+
+import org.springframework.http.ProblemDetail;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.example.www.dto.TaskDto;
+import com.example.www.entity.Task;
+
+import jakarta.validation.Valid;
+
+@Service
+public class TaskService {
+	public ResponseEntity<Task> createTask(TaskDto taskDto)
+	{
+		
+	}
+}

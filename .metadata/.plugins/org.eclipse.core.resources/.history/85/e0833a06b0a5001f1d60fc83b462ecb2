@@ -1,0 +1,50 @@
+package com.example.www.service;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.www.dto.TaskDto;
+import com.example.www.entity.Task;
+import com.example.www.exception.TaskNotFound;
+import com.example.www.mapper.TaskMapper;
+import com.example.www.repository.TaskRepository;
+
+import jakarta.validation.Valid;
+
+@Service
+public class TaskService {
+	
+	// get the bean of the @TaskRepository
+	@Autowired
+	private TaskRepository taskRepository;
+	TaskMapper mapper=new TaskMapper();
+	
+	public TaskDto createTask(@Valid TaskDto taskDto) 
+	{
+		Task task=mapper.toEntity(taskDto); //map to entity class
+		Task addedTask=taskRepository.save(task);
+		return mapper.toDto(addedTask);   ////map to dto class and return
+				
+	}
+
+	public List<TaskDto> getAllTasks() 
+	{
+		List<TaskDto> allTasks=new ArrayList<>();
+		
+		//store the all task in allTask List 
+		taskRepository.findAll().forEach(obj -> {
+			allTasks.add(mapper.toDto(obj));
+		});
+		return allTasks;
+	}
+
+	public TaskDto getTaskByID(long id)
+	{
+		Task getTask=taskRepository.findById(id).orElseThrow(()-> new TaskNotFound("Task Not Found"));
+		return mapper.toDto(getTask);
+	}
+
+	
+}

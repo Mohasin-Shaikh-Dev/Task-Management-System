@@ -1,0 +1,18 @@
+package com.example.www.entity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table
+
+public class Student {
+	
+	@Id
+	int stud_id;
+	
+	String name;
+
+}

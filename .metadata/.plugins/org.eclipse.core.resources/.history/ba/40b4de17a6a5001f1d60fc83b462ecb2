@@ -1,0 +1,32 @@
+package com.example.www.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.www.dto.TaskDto;
+import com.example.www.entity.Task;
+import com.example.www.mapper.TaskMapper;
+import com.example.www.repository.TaskRepository;
+
+import jakarta.validation.Valid;
+
+@Service
+public class TaskService {
+	
+	// get the bean of the @TaskRepository
+	@Autowired
+	private TaskRepository taskRepository;
+	TaskMapper mapper=new TaskMapper();
+	public TaskDto createTask(@Valid TaskDto taskDto) 
+	{
+		//map to entity class
+		Task task=mapper.toEntity(taskDto);
+		
+		Task addedTask=taskRepository.save(task);
+		
+		//map to dto class and return
+		return mapper.toDto(addedTask);
+				
+	}
+
+	
+}

@@ -1,0 +1,58 @@
+package com.example.www.customTest;
+
+import static org.hamcrest.CoreMatchers.any;
+import static org.mockito.Mockito.when;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import com.example.www.dto.TaskDto;
+import com.example.www.entity.Status;
+import com.example.www.entity.Task;
+import com.example.www.mapper.TaskMapper;
+import com.example.www.repository.TaskRepository;
+import com.example.www.service.TaskService;
+
+public class TaskServiceTest {
+	
+	@InjectMocks
+	private TaskService taskService;
+	
+	@Mock
+	private TaskMapper taskMapper;
+	
+	@Mock
+	private TaskRepository taskRepository; //Mocked Task repository to simulate(fake) database interaction
+	
+	 Task task1 = new Task(1, "Task1", "Description1", LocalDate.now(), Status.IN_PROCESS, LocalDateTime.now(), LocalDateTime.now());
+     Task task2 = new Task(2, "Task2", "Description2", LocalDate.now(), Status.COMPLETED, LocalDateTime.now(), LocalDateTime.now());
+     
+     // Creating Task DTOs
+     TaskDto taskDto1 = new TaskDto(1, "Task1", "Description1", LocalDate.now(), Status.IN_PROCESS, LocalDateTime.now(), LocalDateTime.now());
+     TaskDto taskDto2 = new TaskDto(2, "Task2", "Description2", LocalDate.now(), Status.COMPLETED, LocalDateTime.now(), LocalDateTime.now());
+     
+     
+	//test case for the getAllTask method    
+	@Test
+	public void testgetAllTasks()
+	{
+		 List<Task> taskList = Arrays.asList(task1,task2);
+	        when(taskRepository.findAll()).thenReturn(taskList); // Mock findAll call
+	        when(taskMapper.toDto(task1).thenReturn(taskDto1); // Mock conversion to DTO
+
+	        List<TaskDto> allTasks = taskService.getAllTasks(); // Call service method
+
+	        Assertions.assertNotNull(allTasks);
+	        assertEquals(1, allTasks.size()); // Assert that size is correct
+	        assertEquals(taskDto.getTitle(), allTasks.get(0).getTitle()); // Check if the task title matches
+	}
+
+}
