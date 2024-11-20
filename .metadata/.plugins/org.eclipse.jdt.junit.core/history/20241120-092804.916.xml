@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="UserTaskTest" project="TaskManagmentSystem" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="com.example.www.customTest.UserTaskTest" time="4.176" displayname="UserTaskTest" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]">
-    <testcase name="testUpdateTask" classname="com.example.www.customTest.UserTaskTest" time="4.035" displayname="testUpdateTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testUpdateTask()]"/>
-    <testcase name="testGetAllTask" classname="com.example.www.customTest.UserTaskTest" time="0.06" displayname="testGetAllTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testGetAllTask()]"/>
-    <testcase name="testCreateTask" classname="com.example.www.customTest.UserTaskTest" time="0.068" displayname="testCreateTask()" uniqueid="[engine:junit-jupiter]/[class:com.example.www.customTest.UserTaskTest]/[method:testCreateTask()]"/>
-  </testsuite>
-</testrun>
