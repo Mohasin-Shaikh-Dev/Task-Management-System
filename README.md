@@ -40,7 +40,7 @@ cd Task-Management-System/TaskManagmentSystem</code></pre>
 
 <h3>Step 3: Run the Application</h3>
 <p>You can run the Spring Boot application using the following command:</p>
-<pre><code>mvn spring-boot:run</code></pre>
+<pre><code>mvn spring:run</code></pre>
 
 <h3>Step 4: Access the Application</h3>
 <p>Once the application is running, you can access it through the following URL in your web browser or API client:</p>
