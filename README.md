@@ -19,6 +19,14 @@ Before running the application, make sure the following are installed and set up
 ### Step 1: Clone the Repository
 Clone the repository from GitHub to your local machine:
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Mohasin-Shaikh-Dev/Task-Management-System.git
 cd Task-Management-System/TaskManagmentSystem
+
+### Step 1: Clone the Repository
+Clone the repository from GitHub to your local machine:
+```bash
+git clone https://github.com/Mohasin-Shaikh-Dev/Task-Management-System.git
+cd Task-Management-System/TaskManagmentSystem
+
+
 
