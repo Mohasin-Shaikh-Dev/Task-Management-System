@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Task Management System API</h1>
+<h1>Task Management System </h1>
 
 <h2>Prerequisites</h2>
 <p>Before running the application, make sure the following tools are installed and set up:</p>
